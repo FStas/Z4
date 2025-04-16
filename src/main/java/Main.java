@@ -16,16 +16,34 @@ class Main {
     try {
       Service s = new Service();
       Scanner sc = new Scanner(System.in);
-      System.out.println("Podaj imie: ");
-      String imie = sc.nextLine();
-      System.out.println("Podaj wiek: ");
-      int wiek = sc.nextInt();
-      s.addStudent(new Student(imie, wiek));
-      
-      var students = s.getStudents();
-      for(Student current : students) {
-        System.out.println(current.ToString());
-      }
+      while (n != 0)
+        {
+          System.out.println("1 - Wypisz studentów: ");
+          System.out.println("2 - Dodaj wpis: ");
+          System.out.println("0 - Zakończ program: ");
+          int n = sc.nextInt();
+          switch (n)
+            {
+                case 1:
+                    var students = s.getStudents();
+                    for(Student current : students) {
+                      System.out.println(current.ToString());
+                    }
+                    n = 10;
+                    break;
+                case 2:
+                    System.out.println("Podaj imie: ");
+                    String imie = sc.next();
+                    System.out.println("Podaj wiek: ");
+                    int wiek = sc.nextInt();
+                    s.addStudent(new Student(imie, wiek));
+                    n = 10;
+                    break;
+                default:
+                    n = 0;
+                    break;
+            }
+        }
     } catch (IOException e) {
 
     }
