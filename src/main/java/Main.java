@@ -16,12 +16,14 @@ class Main {
     try {
       Service s = new Service();
       Scanner sc = new Scanner(System.in);
-      while (n != 0)
+      int n = 0;
+      while (n == 0)
         {
+          System.out.flush();
           System.out.println("1 - Wypisz studentów: ");
           System.out.println("2 - Dodaj wpis: ");
           System.out.println("0 - Zakończ program: ");
-          int n = sc.nextInt();
+          n = sc.nextInt();
           switch (n)
             {
                 case 1:
@@ -29,7 +31,7 @@ class Main {
                     for(Student current : students) {
                       System.out.println(current.ToString());
                     }
-                    n = 10;
+                    n = 0;
                     break;
                 case 2:
                     System.out.println("Podaj imie: ");
@@ -37,10 +39,10 @@ class Main {
                     System.out.println("Podaj wiek: ");
                     int wiek = sc.nextInt();
                     s.addStudent(new Student(imie, wiek));
-                    n = 10;
+                    n = 0;
                     break;
                 default:
-                    n = 0;
+                    n = 1;
                     break;
             }
         }
