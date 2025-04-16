@@ -16,16 +16,45 @@ class Main {
     try {
       Service s = new Service();
       Scanner sc = new Scanner(System.in);
-      System.out.println("Podaj imie: ");
-      String imie = sc.nextLine();
-      System.out.println("Podaj wiek: ");
-      int wiek = sc.nextInt();
-      s.addStudent(new Student(imie, wiek));
-      
-      var students = s.getStudents();
-      for(Student current : students) {
-        System.out.println(current.ToString());
-      }
+      int n = 0;
+      while (n == 0)
+        {
+          System.out.println("1 - Wypisz studentów: ");
+          System.out.println("2 - Dodaj wpis: ");
+          System.out.println("0 - Zakończ program: ");
+          n = sc.nextInt();
+          switch (n)
+            {
+                case 1:
+                    var students = s.getStudents();
+                    for(Student current : students) {
+                      System.out.println(current.ToString());
+                    }
+                    System.out.println("Naciśnij Enter, aby kontynuować...");
+                    sc.nextLine();
+                    sc.nextLine();
+                    System.out.print("\033[H\033[2J");  
+                    System.out.flush();
+                    n = 0;
+                    break;
+                case 2:
+                    System.out.println("Podaj imie: ");
+                    String imie = sc.next();
+                    System.out.println("Podaj wiek: ");
+                    int wiek = sc.nextInt();
+                    s.addStudent(new Student(imie, wiek));
+                    System.out.println("\nNaciśnij Enter, aby kontynuować...");
+                    sc.nextLine();
+                    sc.nextLine();
+                    System.out.print("\033[H\033[2J");  
+                    System.out.flush();
+                    n = 0;
+                    break;
+                default:
+                    n = 1;
+                    break;
+            }
+        }
     } catch (IOException e) {
 
     }
