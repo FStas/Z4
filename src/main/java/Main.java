@@ -19,6 +19,7 @@ class Main {
       int n = 0;
       while (n == 0)
         {
+          System.out.print("\033[H\033[2J");  
           System.out.flush();
           System.out.println("1 - Wypisz studentów: ");
           System.out.println("2 - Dodaj wpis: ");
