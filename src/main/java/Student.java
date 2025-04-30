@@ -25,7 +25,7 @@ public class Student {
   public int GetYear() {return Year;}
 
   public String ToString() {
-    return Name + ' ' + Surname + ' ' + Integer.toString(Age) + ' ' + Integer.toString(Day+' '+Month+' '+Year);
+    return Name + " " + Surname + " " + Integer.toString(Age) + " " + Integer.toString(Day+' '+Month+' '+Year);
 
   }
   public static Student Parse(String str){
