@@ -21,12 +21,13 @@ class Main {
         {
           System.out.println("1 - Wypisz studentów: ");
           System.out.println("2 - Dodaj wpis: ");
+          System.out.println("3 - wyszukaj studenta:");
           System.out.println("0 - Zakończ program: ");
           n = sc.nextInt();
+          var students = s.getStudents();
           switch (n)
             {
                 case 1:
-                    var students = s.getStudents();
                     for(Student current : students) {
                       System.out.println(current.ToString());
                     }
@@ -58,6 +59,13 @@ class Main {
                     System.out.flush();
                     n = 0;
                     break;
+               case 3:
+                    System.out.println("Podaj imie: ");
+                    String szukaj_imie = sc.next();
+                    for (Student current : students){
+                        if (current.GetName().equals(szukaj_imie))
+                            System.out.println(current.ToString());
+                    }
                 default:
                     n = 1;
                     break;
