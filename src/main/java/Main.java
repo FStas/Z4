@@ -40,9 +40,17 @@ class Main {
                 case 2:
                     System.out.println("Podaj imie: ");
                     String imie = sc.next();
+                    System.out.println("Podaj nazwisko:");
+                    String nazwisko = sc.next();
                     System.out.println("Podaj wiek: ");
                     int wiek = sc.nextInt();
-                    s.addStudent(new Student(imie, wiek));
+                    System.out.println("Podaj dzien: ");
+                    int dzien = sc.nextInt();
+                    System.out.println("Podaj miesiac: ");
+                    int miesiac = sc.nextInt();
+                    System.out.println("Podaj rok: ");  
+                    int rok = sc.nextInt();
+                    s.addStudent(new Student(imie, nazwisko, wiek, dzien, miesiac, rok));
                     System.out.println("\nNaciśnij Enter, aby kontynuować...");
                     sc.nextLine();
                     sc.nextLine();

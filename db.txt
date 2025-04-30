@@ -7,3 +7,5 @@ Witold 62
 Jan 15
 Łukasz 20
 Sebastian 34
+Jan Kowalski 100
+Jarosław Trytka 25 2098
